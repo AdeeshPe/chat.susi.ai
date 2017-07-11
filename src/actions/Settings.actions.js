@@ -10,13 +10,20 @@ export function serverChanged(server){
     server
   });
 }
-
 export function themeChanged(theme) {
   ChatAppDispatcher.dispatch({
     type: ActionTypes.THEME_CHANGED,
     theme
   });
   Actions.setThemeSettings(theme);
+};
+
+export function customThemeAdded(theme) {
+  ChatAppDispatcher.dispatch({
+    type: ActionTypes.CUSTOM_THEME_ADDED,
+    theme
+  });
+  Actions.setCustomTheme(theme);
 };
 
 export function enterAsSendChanged(enterAsSend) {

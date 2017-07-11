@@ -371,7 +371,8 @@ export default class SignUp extends Component {
                               maxWidth:'200px',
                               flexWrap: 'wrap',
                               margin: 'auto'}}
-                             name="server" onChange={this.handleChange}
+                             name="server"
+                             onChange={this.handleChange}
                              defaultSelected="standardServer">
                             <RadioButton
                                    value="customServer"

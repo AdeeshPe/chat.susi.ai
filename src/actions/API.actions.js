@@ -228,7 +228,37 @@ export function getSettings(){
     }
   });
 }
+export function setCustomTheme(customTheme){
+  console.log(customTheme.header);
+  let defaults = UserPreferencesStore.getPreferences();
+  let defaultServerURL = defaults.Server;
+  let BASE_URL = '';
+  if(cookies.get('serverUrl')===defaultServerURL||
+    cookies.get('serverUrl')===null||
+    cookies.get('serverUrl')=== undefined) {
+    BASE_URL = defaultServerURL;
+  }
+  else{
+    BASE_URL= cookies.get('serverUrl');
+  }
+  let url = '';
 
+  if(cookies.get('loggedIn')===null||
+    cookies.get('loggedIn')===undefined) {
+    return;
+  }
+  console.log('aaaaaa',customTheme);
+  url = BASE_URL+'/aaa/changeUserSettings.json?'
+          +'key=header&value='+customTheme.header.slice(1)
+          +'&key=body&value='+customTheme.body.slice(1)
+          +'&key=pane&value='+customTheme.pane.slice(1)
+          +'&key=composer&value='+customTheme.composer.slice(1)
+          +'&key=textarea&value='+customTheme.textarea.slice(1)
+          +'&access_token='+cookies.get('loggedIn');
+
+  console.log(url);
+  makeServerCall(url);
+}
 // Push Theme to server
 export function setThemeSettings(newTheme){
   let defaults = UserPreferencesStore.getPreferences();
@@ -342,6 +372,7 @@ export function setSpeechOutputSettings(newSpeechOutput){
 }
 
 export function makeServerCall(url){
+  console.log('url',url);
   $.ajax({
     url: url,
     dataType: 'jsonp',
@@ -349,10 +380,10 @@ export function makeServerCall(url){
     timeout: 3000,
     async: false,
     success: function (response) {
-      console.log(response);
+      console.log('response',response);
     },
     error: function(errorThrown){
-      console.log(errorThrown);
+      console.log('errorThrown',errorThrown);
     }
   });
 }

@@ -11,6 +11,7 @@ export default {
     RECEIVE_RAW_MESSAGES: null,
     STORE_HISTORY_MESSAGE: null,
     THEME_CHANGED:null,
+    CUSTOM_THEME_ADDED:null,
     SERVER_CHANGED: null,
     ENTER_AS_SEND_CHANGED: null,
     MIC_INPUT_CHANGED: null,

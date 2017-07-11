@@ -2,6 +2,7 @@
 import {  getLocation,
           getSettings,
           setThemeSettings,
+          setCustomTheme,
           setMicInputSettings,
           setEnterAsSendSettings,
           setSpeechOutputSettings,
@@ -21,7 +22,8 @@ import {  serverChanged,
           enterAsSendChanged,
           micInputChanged,
           speechOutputChanged,
-          themeChanged  } from './Settings.actions';
+          themeChanged,
+          customThemeAdded  } from './Settings.actions';
 
 import {  connectToWebSocket,
           sendToHardwareDevice } from './HardwareConnect.actions';
@@ -31,6 +33,7 @@ import {  connectToWebSocket,
 export {  getLocation,
           getSettings,
           setThemeSettings,
+          setCustomTheme,
           setMicInputSettings,
           setEnterAsSendSettings,
           setSpeechOutputSettings,
@@ -50,6 +53,7 @@ export { serverChanged,
          enterAsSendChanged,
          micInputChanged,
          speechOutputChanged,
-         themeChanged }
+         themeChanged,
+         customThemeAdded }
 
 export { connectToWebSocket, sendToHardwareDevice }

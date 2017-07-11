@@ -60,6 +60,11 @@ UserPreferencesStore.dispatchToken = ChatAppDispatcher.register(action => {
             UserPreferencesStore.emitChange();
             break;
         }
+        case ActionTypes.CUSTOM_THEME_ADDED: {
+            _defaults.Theme = action.theme;
+            UserPreferencesStore.emitChange();
+            break;
+        }
         case ActionTypes.SERVER_CHANGED: {
             _defaults.Server = action.server;
             UserPreferencesStore.emitChange();

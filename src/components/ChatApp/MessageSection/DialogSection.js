@@ -123,7 +123,7 @@ DialogSection.propTypes = {
     ServerChangeActions: PropTypes.array,
     HardwareActions: PropTypes.array,
     customSettingsDone: PropTypes.object,
-    ThemeChangerComponents: PropTypes.array,
+    ThemeChangerComponents: PropTypes.object,
     actions: PropTypes.object,
     bodyStyle: PropTypes.object,
     onRequestCloseServerChange: PropTypes.func,
