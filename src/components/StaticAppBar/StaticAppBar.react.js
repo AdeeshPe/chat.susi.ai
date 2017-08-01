@@ -157,7 +157,9 @@ class StaticAppBar extends Component {
         if (cookies.get('loggedIn')) {
             Logged = (props) => (
                 <div>
-
+                    <MenuItem primaryText="Chat"
+                        containerElement={<Link to="/" />}
+                        rightIcon={<Chat />} />
                     <MenuItem primaryText="Logout"
                         containerElement={<Link to="/logout" />}
                         rightIcon={<Exit />} />
@@ -165,19 +167,19 @@ class StaticAppBar extends Component {
             )
             return <Logged />
         }
-Logged = (props) => (
-    <div>
-        <MenuItem primaryText="Login"
-            onTouchTap={this.handleLogin} />
-        <MenuItem primaryText="Sign Up"
-            onTouchTap={this.handleSignUp}
-            rightIcon={<Signup />} />
-        <MenuItem primaryText="Chat"
-            containerElement={<Link to="/logout" />}
-            rightIcon={<Exit />} />
-    </div>
-)
-return <Logged />
+        Logged = (props) => (
+            <div>
+                <MenuItem primaryText="Login"
+                    onTouchTap={this.handleLogin} />
+                <MenuItem primaryText="Sign Up"
+                    onTouchTap={this.handleSignUp}
+                    rightIcon={<Signup />} />
+                <MenuItem primaryText="Chat"
+                    containerElement={<Link to="/logout" />}
+                    rightIcon={<Chat />} />
+            </div>
+        )
+        return <Logged />
     }
 
     render() {
